@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Temperature Zone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="number"], input[type="submit"] {
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            border: none;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Patient Information</h1>
+        <form action="/predict" method="POST">
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" required><br>
+            
+            <label for="body_temp">Body Temperature (Celsius):</label><br>
+            <input type="number" id="body_temp" name="body_temp" step="0.01" required><br>
+            
+            <label for="heart_rate">Heart Rate:</label><br>
+            <input type="number" id="heart_rate" name="heart_rate" required><br>
+            
+            <label for="patient_id">Patient ID:</label><br>
+            <input type="number" id="patient_id" name="patient_id" required><br>
+            
+            <label for="gender_encoded">Gender (0: Male, 1: Female):</label><br>
+            <input type="number" id="gender_encoded" name="gender_encoded" required><br>
+            
+            <label for="age_group_encoded">Age Group (0: Child, 1: Adult, 2: Elderly):</label><br>
+            <input type="number" id="age_group_encoded" name="age_group_encoded" required><br>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
